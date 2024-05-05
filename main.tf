@@ -76,10 +76,18 @@
 #  }
 #}
 
+variable "access_key" {
+  type = string
+  default = ""
+}
+variable "secret_key" {
+  type = string
+  default = ""
+}
 provider "aws" {
   region     = "us-east-1"
-  access_key = "AKIA6GBMBSCUMNVY3S5T"
-  secret_key = "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"
+  access_key = var.access_key
+  secret_key = var.secret_key
   # Account B credentials
   alias = "account_a"
 }
